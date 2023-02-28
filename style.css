@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif; /* Domyślna czcionka */
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #191a1a;
+    color: #d3d1cf;                 /* Domyślny kolor czcionki na stronie */
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-image: url("images/banner_resize_enhanced.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+    background-size: 100% 200%;
+
+    /* background-attachment: fixed;
+    background-position: center top;            Ciekawy efekt dynamicznego tła ale przy reflect wygląda conajmniej dziwnie xD
+    background-size: 100% 60%; */
+
+    text-align: center;
+    font-size: 86px;       /* Wielkość czcionki tutaj by wysokość headera została poprawnie wyświetlona */
+    min-height: 3.3em;            /* 6em = 48px*6 = 288px lub 3.3em = 86px *3.3 = 288px */
+    width: 100%;
+    line-height: 2em;
+
+    display: flex;
+    flex-direction: column;             /*Wyśrodkowanie h1 w headerze*/
+    justify-content: center;
+
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));    /* Odbicie headera poniżej niego */
+}
+
+header > h1 {
+    margin: 0;         /* Usunięcie marginesów dla h1 w headerze */
+    color: white;
+    -webkit-box-reflect: none;          /* No niestety, chciałbym żeby to działało :( */
+}
+
+h1, h2{
+    font-family: Oswald, sans-serif;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 2em;
+    background-clip: content-box;
+    padding: 0.5em;
+    z-index: 3;             /*z-index na 3 bo dropdown pojawiał się pod contentem maina*/
+}
+
+main {                     /* z-index by box-reflect nie przysłaniał elementów poniżej headera */
+    position: relative;
+    z-index: 1;
+}
+
+nav > ul {                              /* Ustawienie w szereg i wyśrodkowanie przycisków w nav */
+    margin: 2em 4em;
+    display: flex;
+    justify-content: space-around;
+    row-gap: 1em;
+    flex-wrap: wrap;
+}
+
+nav  ul {                               /* Usunięcie kropek listy */
+    list-style-type: none;
+}
+
+@media screen and (max-width: 1835px) {
+    nav > ul {
+        max-width: 1060px;                          /* Skalowanie nav */
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+nav > ul > li {                         /* Wygląd przyciskó w nav */
+    background-color: transparent;
+    border: 0.1em solid white;
+    border-radius: 1em;
+    font-size: 1.4em;
+}
+
+.active {
+    background-color: white;
+    border-radius: 0.8em; 
+    color: black;
+    position: relative;
+    top: -0.5em;
+    font-weight: bold;
+}
+
+nav ul a {
+    display: block;             /* By móc ustawić padding top i bottom na 10px */
+    padding: 10px 15px;         /* Padding by cały przycisk był klikalny (nie tylko content elementu <a>) */    
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;       /* Gładkie przejście stylu na przyciskach nawigacyjnych */
+}
+
+nav li:hover > a {
+    background-color: white;
+    border-radius: 0.8em; 
+    color: black;
+    position: relative;
+    top: -0.5em;
+    font-weight: bold;
+}
+
+#dropdown {
+    position: relative;
+}
+
+#dropdown-content {
+    /* display: block; */   /* W sumie to to nie potrzebne */
+    visibility: hidden;
+    position: absolute;
+    z-index: 99;
+    top: 2.5em;                             /* Żeby dropdown był lekko poniżej przycisku i po najechaniu rozwijał się od góry (dla bottom lista wyjeżdżała by z dołu) */
+    background-color: #0e0d0d;
+    border-radius: 1.5em;
+    opacity: 0;                             /* Do animacji hovera */
+    height: 0;                              /* To też, fajny efekt rozwijania listy */
+    transition: 0.3s, opacity 0.5s;
+    overflow: hidden;                       /* Żeby przycisku dropdownu nie wyjedżały poza element przy animacji */
+}
+
+#dropdown:hover #dropdown-content{  
+    display: block;
+    visibility: visible;
+    height: 22.5em;
+    opacity: 1;
+}
+
+#dropdown-content ul{
+    padding: 0.3em;
+}
+
+/* nav > ul > li {
+    float: left;                    Stary nav, na górze zrobiony w flexboxie
+}
+
+nav::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
+
+/* nav {
+    text-align: center;
+    margin-top: 8.5em;
+}
+
+nav button {
+    background-color: transparent;
+    border: 0.1em solid white;
+    border-radius: 1em;
+    font-size: 1.5em;
+    padding: 10px 15px;
+    margin-left: 10px;
+}
+
+nav div {
+    display: inline;
+}
+
+nav div ul{
+    display: none;
+}
+
+nav  a {
+    text-decoration: none;
+    color: white;
+} */
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 4em;
+    color: white;
+}
+
+main h2 {
+    font-size: 3em;
+}
+
+article:not(:first-of-type) h2{
+    margin-top: 2em;
+}
+
+main h3 {
+    font-size: 2em;
+}
+
+main p, main ul {
+    font-size: 1.5em;
+}
+
+main table th{
+    font-size: 1.5em;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.for-definicja {
+    align-items: center;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 4em 0 1em;
+}
+
+
+/* Scrollbar style */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(36, 124, 207); 
+    border-radius: 15px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(11, 75, 170);
+    border-radius: 15px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(6, 45, 104);
+  }

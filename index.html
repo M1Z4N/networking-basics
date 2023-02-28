@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Noto+Sans&effect=anaglyph|neon|3d">
+    <!-- Google font API z efektami https://developers.google.com/fonts/docs/getting_started -->
+
+    <meta name="keywords" content="www, dhcp, ftp, model OSI, TCP/IP, UDP, router, switch">
+    <meta name="description" content="Podstawy sieci komputerowych.">
+    <meta name="author" content="Artur Nazim">
+
+    <title>Sieci komputerowe - strona główna</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="font-effect-3d">Sieci komputerowe</h1> <!-- Klasa font-effect-3d z Google Font API -->
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Strona główna</a></li>
+            <li><a href="#">Topologie</a></li>
+            <li><a href="#">Adresy IP</a></li>
+            <li><a href="#">Model OSI</a></li>
+            <li><a href="#">Protokoły sieciowe</a></li>
+            <li><a href="#">Media transmisji</a></li>
+            <li><a href="#">Sprzęt aktywny</a></li>
+            <li><a href="#">Słownik pojęć</a></li>
+
+            <li id="dropdown"><a href="#">Usługi sieciowe ☰</a>
+                <div id="dropdown-content">
+                    <ul>
+                        <li><a href="#">DHCP</a></li>
+                        <li><a href="#">WWW</a></li>
+                        <li><a href="#">FTP</a></li>
+                        <li><a href="#">Grupy dyskusyjne</a></li>
+                        <li><a href="#">IRC</a></li>
+                        <li><a href="#">Poczta</a></li>
+                        <li><a href="#">Serwer aplikacji</a></li>
+                        <li><a href="#">Serwer plików</a></li>
+                        <li><a href="#">Serwer wydruku</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
+        <!-- <button><a href="#" class="active">Strona główna</a></button>
+        <button><a href="#">Topologie</a></button>
+        <button><a href="#">Protokoły sieciowe</a></button>
+        <button><a href="#">Adresy IP</a></button>
+        <button><a href="#">Model OSI</a></button>
+        <button><a href="#">Media transmisji</a></button>
+        <button><a href="#">Sprzęt aktywny</a></button>
+        <button><a href="#">Słownik pojęć</a></button>
+
+        <div class="dropdown">
+            <button><a href="#">Usługi sieciowe <span style="font-size:large;">&#8628</span></a></button>
+            <ul>
+                <li>DHCP</li>
+                <li>WWW</li>
+                <li>FTP</li>
+                <li>Grupy dyskusyjne</li>
+                <li>IRC</li>
+                <li>Poczta</li>
+                <li>Serwer aplikacji</li>
+                <li>Serwer plików</li>
+                <li>Serwer wydruku</li>
+            </ul>
+        </div> -->
+    </nav>
+
+    <main>
+        <h1>Charakterystyka sieci komputerowych</h1>
+        <article class="flex-container for-definicja">
+            <div>
+                <h2  style="margin-top: 0;">Definicja</h2>
+                <p>Sieć komputerowa (<em><b>z ang.</b> computer network</em>), układ komputerów i urządzeń końcowych
+                    (<em><b>np.</b> drukarka</em>) połączonych między sobą szeregowymi łączami komunikacyjnymi,
+                    umożliwiającymi wymianę komunikatów między poszczególnymi stanowiskami. Sieć komputerowa zapewnia
+                    bezpieczny dostęp użytkowników do wspólnych zasobów takich jak dane lub urządzenia peryferyjne.</p>
+            </div>
+            <figure>
+                <img src="images/computer_network_2 (1).png" alt="Computer network">
+                <figcaption style="text-align: right;">Przykład sieci komputerowej (<a
+                        href="https://www.pngfind.com/mpng/ixRwRxb_network-services-computer-networking-png-transparent-png/"
+                        target="_blank">Źródło</a>)</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <h2>Charakterystyka</h2>
+            <p>Dostęp komputera do sieci komputerowej odbywa się za pośrednictwem interfejsu sieciowego. Niektóre z
+                komputerów działających w sieci mogą pełnić specjalne funkcje (<em><b>np.</b> bram, mostów lub
+                    ruterów</em>), inne po prostu korzystają z udogodnień tworzonych przez sieć (<em><b>np.</b>
+                    dzielenia zasobów</em>).</p>
+
+            <p><mark>Siecią komputerową</mark> nazywamy strukturę składającą się ze stacji sieciowych (<em><b>tzw.</b>
+                    HOST-ów</em>) i łączącego je kabla sieciowego, ogólnie zwanego medium transmisyjnym. Inaczej mówiąc,
+                jedna sieć ma jeden wspólny dla wszystkich stacji kabel sieciowy, służący do transmisji informacji
+                między nimi. W praktyce oznacza to, że w tym samym momencie, gdy w sieci odbywa się przesyłanie
+                informacji między dwiema stacjami sieciowymi, nie może się odbywać transmisja między dwiema innymi
+                stacjami. Aby w tak rozumianej sieci informacje wysyłane przez określona stację nadawczą trafiły do
+                określonej stacji odbiorczej, każda z nich musi mieć swój adres odróżniający ją spośród innych stacji
+                zainstalowanych w sieci.</p>
+
+            <p><strong>Początki sieci komputerowej sięgają połowy lat sześćdziesiątych XX w.</strong> (<em>sieć
+                    ARPANET</em>).</p>
+
+            <p>W zależności od odległości między komputerami rozróżnia się sieci lokalne, miejskie i rozległe. Szybkości
+                przesyłania danych w sieciach wahają się w granicach od 56 Kb/s (i mniejszych  w przypadku
+                zagęszczenia) do megabitów na sekundę (<em>sieci ATM</em>).<br>
+                Sieci komputerowe mają olbrzymie znaczenie na każdym szczeblu komunikacji: od wymiany informacji między
+                dwoma sąsiednimi biurkami w sali giełdy, poprzez skomputeryzowane usługi telefoniczne, radiowe i
+                telewizyjne, aż po globalną, wielofunkcyjną sieć internet łączącą dziesiątki milionów użytkowników na
+                całym świecie.</p>
+        </article>
+
+        <article>
+            <h2>Budowa sieci komputerowej</h2>
+            <p>Sieć komputerowa składa się zarówno za sprzętu jak i oprogramowania. Na sprzęt składa się kabel sieciowy
+                łączący karty sieciowe z urządzeniami sieci, karty sieciowe i urządzenia sieci. Na oprogramowanie składa
+                się system operacyjny, drivery kart sieciowych oraz oprogramowanie pomocnicze do monitorowania sieci i
+                zapewnienia jej bezpieczeństwa.</p>
+        </article>
+
+        <article>
+            <div class="flex-container for-definicja">
+                <div>
+                    <h2>Główny komputer w sieci (serwer)</h2>
+                    <p>Głównym komputerem w sieci jest serwer. Spełnia on takie zadania jak: przechowywanie i odzyskiwanie
+                        plików, współdzielenie urządzeń sieciowych np.: drukarek, ploterów i innych, oraz zarządzanie całą
+                        siecią.</p>
+                </div>
+                <figure>
+                    <img src="images/serverpng.png" alt="Server">
+                    <figcaption style="text-align: right;">Serwer (<a
+                        href="https://www.pngegg.com/pl/png-ecpbs"
+                        target="_blank">Źródło</a>)</figcaption>
+                </figure>
+            </div>
+            <p><u>Serwery</u> ze względu na spełnianą funkcję <u>można podzielić na</u>:</p>
+
+            <ul>
+                <li>
+                    <dl>
+                        <dt><b>serwer plików</b></dt>
+                        <dd>- wypełnia zadania przechowywania i odzyskiwania plików, uwzględniając bezpieczeństwo i
+                            kontrolę praw dostępu do plików i katalogów</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><b>serwer poczty elektronicznej</b></dt>
+                        <dd>- zapewnia usługi wymiany poczty elektronicznej między użytkownikami sieci oraz jej
+                            translację pomiędzy różnymi systemami</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><b>serwer komunikacyjny</b></dt>
+                        <dd>- zapewnia usługi połączeń z systemami minikomputerowymi, mainframe oraz odległymi sieciami
+                            lub systemami poprzez łącza sieci rozległej</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><b>serwer bazy danych</b></dt>
+                        <dd>- dedykowany serwer do przechowywania bazy danych i obsługi zapytań i odpowiedzi do i od tej
+                            bazy</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><b>serwer archiwizujący</b></dt>
+                        <dd>- serwer dedykowany do tworzenia kopii bezpieczeństwa oraz archiwizowania plików</dd>
+                    </dl>
+                </li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Sieci komputerowe można podzielić ze względu na:</h2>
+            <div class="flex-container">
+                <section class="flex-1">
+                    <h3>Zasięg:</h3>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt><b> lokalne (LAN - Local Area Network)</b></dt>
+                                <dd>- sieci o najmniejszym zasięgu, obejmujące zwykle budynek lub grupę sąsiednich
+                                    budynków, zwane również okablowaniem strukturalnym</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><b>sieci kampusowe</b></dt>
+                                <dd>- sieci obejmujące wiele grup budynków np. budynki wydziałów, domy studenckie i
+                                    laboratoria jednej uczelni</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><b>metropolitalne inaczej: miejskie (MAN - Metropolitan Area Network)</b></dt>
+                                <dd>- sieci obejmujące swym zasięgiem miasto (<em><b>np.</b> w Białymstoku działa sieć
+                                        BIAMAN</em>)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><b>zdalne (WAN - Wide Area Network)</b></dt>
+                                <dd>- sieci o dużym zasięgu, przekraczającym obszar jednego miasta - np. sieć globalna
+                                    czy sieć łącząca rozsiane po kraju lub świecie oddziały przedsiębiorstwa</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="flex-1">
+                    <h3>Medium transmisyjne:</h3>
+
+                    <table style="margin: auto;">
+                        <tr>
+                            <th>Sieci przewodowe</th>
+                            <th>Sieci bezprzewodowe</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>kabel koncentryczny</li>
+                                    <li>skrętka</li>
+                                    <li>światłowód</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>radiowe</li>
+                                    <li>mikrofalowe</li>
+                                    <li>podczerwone</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </article>
+
+        <!-- <article>
+            <h2>Nagłówek</h2>
+            <p>Paragraf</p>
+        </article> -->
+    </main>
+
+    <footer>
+        Autor: <a href="https://github.com/M1Z4N" target="_blank">M1Z4N</a>
+        Źródło: <a href="http://linux.cku.krosno.pl/sieci/index.htm" target="_blank">linux.cku.krosno.pl</a>
+    </footer>
+</body>
+
+</html>

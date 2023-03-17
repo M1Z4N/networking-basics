@@ -59,11 +59,6 @@ nav {
     z-index: 3;             /*z-index na 3 bo dropdown pojawiał się pod contentem maina*/
 }
 
-main {                     /* z-index by box-reflect nie przysłaniał elementów poniżej headera */
-    position: relative;
-    z-index: 1;
-}
-
 nav > ul {                              /* Ustawienie w szereg i wyśrodkowanie przycisków w nav */
     margin: 2em 4em;
     display: flex;
@@ -183,8 +178,10 @@ nav  a {
     color: white;
 } */
 
-main {
-    width: 80%;
+main {                     /* z-index by box-reflect nie przysłaniał elementów poniżej headera */
+    position: relative;
+    z-index: 1;
+    width: 75%;
     margin: auto;
 }
 
@@ -198,6 +195,10 @@ main h2 {
     font-size: 3em;
 }
 
+#h2serwer {
+    margin-top: 0;
+}
+
 article:not(:first-of-type) h2{
     margin-top: 2em;
 }
@@ -207,7 +208,7 @@ main h3 {
 }
 
 main p, main ul {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 main table th{
@@ -229,6 +230,10 @@ main table th{
 footer {
     text-align: center;
     padding: 4em 0 1em;
+}
+
+footer a {
+    color: blue;
 }
 
 
